@@ -46,13 +46,16 @@ On the cluster, the tools are already installed.
 Start with:
 
 ~~~bash
+## Make an interactive session (JC)
+srun --ntasks=1 --mem-per-cpu=30G --time=02:00:00 --qos=devel --account=nn9458k --pty bash -i
+
 ## Activate Conda
 conda activate /cluster/projects/nn9458k/oh_know/.conda/skmer
 
 ## Load modules
 
 ### Load FastME
-module load FastME/2.1.6.2-GCC-10.2.
+module load FastME/2.1.6.2-GCC-10.2.0
 
 ### Load FastTree
 module swap GCCcore/10.2.0 GCCcore/8.3.0
@@ -140,6 +143,8 @@ art_bin_MountRainier/art_illumina -h
 We have pre-downloaded the datasets on the cluster. Just make a link:
 
 ~~~ bash
+### Move to your Userwork area (JC)
+cd $USERWORK
 ### make a directory
 mkdir skmer-tutorial
 cd skmer-tutorial 
